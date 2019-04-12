@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 if (typeof document !== 'undefined' && document) {
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   (function(){
@@ -12,13 +14,58 @@ if (typeof document !== 'undefined' && document) {
 
 const Index = () => (
   <div>
-    <img src="/static/logo.png" />
+    <Head>
+      <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:500"
+        rel="stylesheet"
+        key="google-font-montserrat"
+        />
+    </Head>
+    <p className="logo"><em>s</em>martcoding</p>
       <style jsx>{`
-        img {
+        @keyframes blinker {
+          from { opacity: 1.0; }
+          to { opacity: 0.0; }
+        }
+        .logo {
           position: absolute;
-          top: 50%;
           left: 50%;
-          margin: -112px 0 0 -231px;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          padding: 0;
+          margin: 0;
+
+          font-family: 'Montserrat', 'Roboto';
+          color: #37485a;
+          z-index: 1;
+          font-size: 58px;
+        }
+        .logo::after {
+          content: "_";
+          right: 0;
+          padding-left: 6px;
+          font-weight: bold;
+          animation-name: blinker;
+          animation-iteration-count: infinite;
+          animation-timing-function: cubic-bezier(0.42,0,0.58,1);
+          animation-duration: .8s;
+        }
+        .logo em {
+          font-style: normal;
+          padding: 0 15px 0;
+          color: #60bef0;
+          position: relative;
+        }
+        .logo em::before {
+          content: "[";
+          top: 1px;
+          position: absolute;
+          left: -5px;
+        }
+        .logo em::after {
+          content: "]";
+          top: 1px;
+          position: absolute;
         }
       `}</style>
   </div>
