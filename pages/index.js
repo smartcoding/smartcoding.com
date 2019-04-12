@@ -23,9 +23,9 @@ const Index = () => (
     </Head>
     <p className="logo"><em>s</em>martcoding</p>
       <style jsx>{`
-        @keyframes blinker {
-          from { opacity: 1.0; }
-          to { opacity: 0.0; }
+        @keyframes blink {
+          0%,100% {opacity: 1}
+          50% {opacity: 0}
         }
         .logo {
           position: absolute;
@@ -45,9 +45,9 @@ const Index = () => (
           right: 0;
           padding-left: 6px;
           font-weight: bold;
-          animation-name: blinker;
+          animation-name: blink;
           animation-iteration-count: infinite;
-          animation-timing-function: cubic-bezier(0.42,0,0.58,1);
+          animation-timing-function: ease;
           animation-duration: .8s;
         }
         .logo em {
