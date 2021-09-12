@@ -9,7 +9,7 @@ import Head from "next/head";
 const boardID = "543970021";
 // Settings -> Hosting -> Path Prefix
 const baseURL = "https://peerboard.smartcoding.com";
-const pathPrefix = "/";
+const pathPrefix = "/community";
 
 class Community extends React.Component {
   containerRef = React.createRef();
